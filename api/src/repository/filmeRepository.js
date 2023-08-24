@@ -30,13 +30,7 @@ export async function alterarimagem(imagem,id) {
 
 export async function listarTodosFilmes () {
     const comando = 
-    `SELECT id_filme			id,
-    nm_filme			nome,
-     vl_avaliacao		avaliacao,
-     dt_lancamento	lancamento,
-     bt_disponivel	disponivel,
-     id_usuario        usuario
-     FROM tb_filme`
+    `SELECT * FROM tb_filme`
 
     const [linhas] = await con.query(comando)
     return linhas

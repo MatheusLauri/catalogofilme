@@ -59,7 +59,7 @@ server.put('/filme/:id/capa', upload.single('capa'), async (req, resp) => {
 })
 
 
-server.get('/filme',async (req,resp) => {
+server.get('/listarfilme',async (req,resp) => {
     try{
         const resposta = await listarTodosFilmes()
         resp.send(resposta)
