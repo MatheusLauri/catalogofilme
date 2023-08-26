@@ -51,21 +51,25 @@ export default function Index() {
               </div>
               <div>
                 <div className='form-row'>
-                  <label>Nome:</label>
-                  <input type='text' placeholder='Nome do filme' />
+                  <label>Nome Filme:</label>
+                  <input type='text' placeholder='Nome do filme' value ={nome} onChange={e => setNome(e.target.value)} />
+                </div>
+                <div className='form-row'>
+                  <label>Nome Autor:</label>
+                  <input type='Number' placeholder='Nome do Autor' value={usuario} onChange={e => setUsuario(e.target.value)} />
                 </div>
                 <div className='form-row'>
                   <label>Avaliação:</label>
-                  <input type='number' placeholder='0' />
+                  <input type='number' placeholder='0' value={avaliacao} onChange={e => setAvaliacao(e.target.value)} />
                 </div>
                 <div className='form-row'>
                   <label>Lançamento:</label>
-                  <input type='date' value='2022-01-01' />
+                  <input type='date'  value={lancamento} onChange={e => setLancamento(e.target.value)} />
                 </div>
                 <br />
                 <div className='form-row'>
                   <label></label>
-                  <input type='checkbox' /> &nbsp; Disponível
+                  <input type='checkbox' value={disponivel} onChange={e => setDisponivel(e.target.value)} /> &nbsp; Disponível
                 </div>
               </div>
               <div>
@@ -76,9 +80,9 @@ export default function Index() {
                 <br />
                 <br />
                 <div className='form-row'>
-                  <label></label>
+                  <label value={sinopse} onChange={e => setSinopse(e.target.value)}></label>
                   <div className='btnSalvar'>
-                    <button>SALVAR</button>
+                    <button onClick={Salvarfilme}>SALVAR</button>
                   </div>
                 </div>
               </div>

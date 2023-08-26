@@ -11,25 +11,6 @@ server.post('/filme', async (req,resp) => {
     try{
         const filmeParaInserir = req.body
 
-
-        if (!novoFilme.nome)
-            throw new Error('Nome do filme é obrigatório!'); // validação
-        
-        if (!novoFilme.sinopse)
-            throw new Error('Sinopse do filme é obrigatório!');
-        
-        if (novoFilme.avaliacao == undefined || novoFilme.avaliacao < 0)
-            throw new Error('Avaliação do filme é obrigatória!');
-    
-        if (!novoFilme.lancamento)
-            throw new Error('Lançamento do filme é obrigatório!');
-        
-        if (novoFilme.disponivel == undefined)
-            throw new Error('Campo Disponível é obrigatório!');
-        
-        if (!novoFilme.usuario)
-            throw new Error('Usuário não logado!');
-
         const filmeIserido =  await inserirFilme(filmeParaInserir)
 
         resp.send(filmeIserido)
@@ -131,25 +112,6 @@ server.put('/filme/:id', async (req, resp) => {
     try {
         const { id } = req.params;
         const filme = req.body;
-
-        if (!filme.nome)
-            throw new Error('Nome do filme é obrigatório!');
-        
-        if (!filme.sinopse)
-            throw new Error('Sinopse do filme é obrigatório!');
-        
-        if (filme.avaliacao == undefined || filme.avaliacao < 0)
-            throw new Error('Avaliação do filme é obrigatória!');
-    
-        if (!filme.lancamento)
-            throw new Error('Lançamento do filme é obrigatório!');
-        
-        if (filme.disponivel == undefined)
-            throw new Error('Campo Disponível é obrigatório!');
-        
-        if (!filme.usuario)
-            throw new Error('Usuário não logado!');
-        
 
         const resposta = await alterarFilme(id, filme);
         if (resposta != 1)
