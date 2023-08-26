@@ -1,42 +1,36 @@
-//import Menu from '../../components/menu'
-//import Cabecalho from '../../components/cabecalho'
+
+
+
 import axios from 'axios';
 import './index.scss'
 import React, { useState } from 'react';
 
 
 export default function Index() {
+  const [nome, setNome] = useState('');
+  const [sinopse, setSinopse] = useState('');
+  const [avaliacao, setAvaliacao] = useState('');
+  const [usuario, setUsuario] = useState('');
+  const [lancamento, setLancamento] = useState('');
+  const [disponivel, setDisponivel] = useState(false);
 
+    async function Salvarfilme() {
 
+    let filme = {
+      nome: nome,
+      sinopse: sinopse,
+      avaliacao: avaliacao,
+      disponivel: disponivel,
+      usuario: usuario,
+      lancamento: lancamento
+    }
 
-   // export default function Inserir() {
- //     const [nome, setNome] = useState('');
-   //   const [sinopse, setSinopse] = useState('');
-//const [avaliacao, setAvaliacao] = useState('');
-   //   const [usuario, setUsuario] = useState('');
-     // const [lancamento, setLancamento] = useState('');
-    //  const [disponivel, setDisponivel] = useState(false);
+    let url = 'http://localhost:5000/filme';
+    let resp = await axios.post(url, filme);
 
+    alert('Salvouu! :)');
+  }
 
-   //   async function salvarfilme() {
-
-   //     let filme = {
-    //      nome: nome,
-     //     sinopse: sinopse,
-     //     avaliacao: avaliacao,
-      //    disponivel: disponivel,
-      //    usuario: usuario,
-       //   lancamento: lancamento
-     //   }
-
-
-    //    let url = 'http://localhost:5000/filme';
-     //   let resp = await axios.post(url, contato);
-
-   //     alert('Salvouu! :)');
-    //  }
-
-   // }
 
 
   return (
