@@ -27,22 +27,22 @@ export default function Listar() {
           <thead>
             <tr>
               <th>#ID</th>
-              <th>Nome</th>
-              <th>Telefone</th>
-              <th>E-mail</th>
-              <th>Favorito</th>
-              <th>Cadastro</th>
+              <th>Diretor</th>
+              <th>Filme</th>
+              <th>lancamento</th>
+              <th>Disponivel</th>
+              <th>Sinopse</th>
             </tr>
           </thead>
           <tbody>
             {listaContatos.map(item =>
               <tr>
-                <td>{item.id}</td>
-                <td>{item.contato}</td>
-                <td>{item.telefone}</td>
-                <td>{item.email}</td>
-                <td>{item.favorito == 1 ? 'Sim' : 'Não'}</td>
-                <td>{item.dtCadastro.substring(0, 10)}</td>
+                <td>{item.id_filme}</td>
+                <td>{item.id_usuario}</td>
+                <td>{item.nm_filme}</td>
+                <td>{item.dt_lancamento}</td>
+                <td>{item.bt_disponivel == 1 ? 'Sim' : 'Não'}</td>
+                <td>{item.ds_sinopse}</td>
               </tr>  
             )}
           </tbody>

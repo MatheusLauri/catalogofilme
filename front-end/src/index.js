@@ -18,8 +18,6 @@ root.render(
             <Route path='/' element={<Home />} />
             <Route path='/listar' element={<Listar/>} />
             <Route path='/inserir' element={<Inserir />} />
-
-
         </Routes>
     </BrowserRouter>
   </React.StrictMode>

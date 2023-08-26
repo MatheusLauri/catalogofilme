@@ -2,14 +2,14 @@
 
 request body
 {
-    "email": "",
+    "avaliacao": "",
     "senha": ""
 }
 
 response (200)
 {
     "id": 0,
-    "email": "",
+    "avaliacao": "",
     "nome": ""
 }
 
